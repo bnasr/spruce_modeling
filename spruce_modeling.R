@@ -34,28 +34,29 @@ models = c("LIN","TT","TTs","PTT","PTTs",
 input_data <- readRDS(input_file)
 
 
-# #running all models 
-# model_fits <- mapply(function(model){ 
-#   pr_fit(model = models,
-#          data = input_data,
-#          method = "GenSA",
-#          control = list(max.call = 1000000),
-#          par_ranges = file.path(params_file))
-# },model = models)
-# 
-# 
-# # model comparison
-# model_comparison <- pr_fit_comparison(
-#   data = input_data,
-#   method = "GenSA",
-#   control = list(max.call = 2000,
-#                  temperature = 10000),
-#   par_ranges = file.path(params_file),
-#   ncores = 1
-# )
+#running all models
+model_fits <- mapply(function(model){
+  pr_fit(model = models,
+         data = input_data,
+         method = "GenSA",
+         control = list(max.call = 1000000),
+         par_ranges = file.path(params_file))
+},model = models)
 
-model_fits <- paste('input', models)
-model_comparison <- paste('output', models)
+
+# model comparison
+model_comparison <- pr_fit_comparison(
+  data = input_data,
+  method = "GenSA",
+  control = list(max.call = 2000,
+                 temperature = 10000),
+  par_ranges = file.path(params_file),
+  ncores = 1
+)
+
+# dummy test
+# model_fits <- paste('input', models)
+# model_comparison <- paste('output', models)
 
 save(list = c('model_fits', 'model_comparison'), file = output_file)
 
