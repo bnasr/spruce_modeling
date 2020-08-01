@@ -23,7 +23,7 @@ params_file <- paste0(project_dir, 'parameter_ranges.csv')
 
 
 #devtools::install_github("khufkens/phenor")
-library(phenor)
+# library(phenor)
 
 models = c("LIN","TT","TTs","PTT","PTTs",
            "M1","M1s","AT", "SQ", "SQb", 
