@@ -31,33 +31,33 @@ models = c("LIN","TT","TTs","PTT","PTTs",
            "PM1b", "UM1", "SGSI", "AGSI")
 
 # calibrate single model using simulated annealing
-input_data <- readRDS(input_file)
+input_data <- try(readRDS(input_file))
 
 
 #running all models
-model_fits <- mapply(function(model){
+model_fits <- try(mapply(function(model){
   pr_fit(model = models,
          data = input_data,
          method = "GenSA",
          control = list(max.call = 1000000),
          par_ranges = file.path(params_file))
-},model = models)
+},model = models))
 
 
 # model comparison
-model_comparison <- pr_fit_comparison(
+model_comparison <- try(pr_fit_comparison(
   data = input_data,
   method = "GenSA",
   control = list(max.call = 2000,
                  temperature = 10000),
   par_ranges = file.path(params_file),
   ncores = 1
-)
+))
 
 # dummy test
 # model_fits <- paste('input', models)
 # model_comparison <- paste('output', models)
 
-save(list = c('model_fits', 'model_comparison'), file = output_file)
+save(list = c('input_file', 'input_data', 'model_fits', 'model_comparison'), file = output_file)
 
 
