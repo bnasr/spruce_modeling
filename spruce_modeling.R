@@ -23,7 +23,7 @@ params_file <- paste0(project_dir, 'parameter_ranges.csv')
 
 
 #devtools::install_github("khufkens/phenor")
-# library(phenor)
+try(library(phenor))
 
 models = c("LIN","TT","TTs","PTT","PTTs",
            "M1","M1s","AT", "SQ", "SQb", 
@@ -53,10 +53,6 @@ model_comparison <- try(pr_fit_comparison(
   par_ranges = file.path(params_file),
   ncores = 1
 ))
-
-# dummy test
-# model_fits <- paste('input', models)
-# model_comparison <- paste('output', models)
 
 save(list = c('input_file', 'input_data', 'model_fits', 'model_comparison'), file = output_file)
 
