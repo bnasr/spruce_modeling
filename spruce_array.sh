@@ -2,7 +2,7 @@
  
 #SBATCH --job-name=spruce_array
 #SBATCH --time=00:00:05
-#SBATCH --mem=1
+#SBATCH --mem-per-cpu=100
 #SBATCH --input=/scratch/ss3526/spruce_modeling/input/input_%a.rds
 #SBATCH --output=/scratch/ss3526/spruce_modeling/output/output_%a.txt
 #SBATCH --array=1-30
