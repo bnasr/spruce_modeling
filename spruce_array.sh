@@ -10,5 +10,5 @@
 #SBATCH --mail-type=ALL
 #SBATCH --exclusive	
 
-load module R
+module load R
 Rscript spruce_spring_models_airtemp_soiltemp.R input_${SLURM_ARRAY_TASK_ID} output_${SLURM_ARRAY_TASK_ID}
