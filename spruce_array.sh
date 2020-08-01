@@ -1,7 +1,7 @@
 #!/bin/bash
  
 #SBATCH --job-name=spruce
-#SBATCH --time=00:00:05
+#SBATCH --time=00:00:01
 #SBATCH --mem-per-cpu=100
 #SBATCH --output=output/output_%a.txt
 #SBATCH --array=1-30
