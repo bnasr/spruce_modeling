@@ -3,7 +3,7 @@
 #SBATCH --job-name=spruce
 #SBATCH --time=00:00:05
 #SBATCH --mem-per-cpu=100
-#SBATCH --nodes=19
+#SBATCH --nodes=1
 #SBATCH --output=output/output_%a.txt
 #SBATCH --array=1-30
 #SBATCH --mail-user=bijan.s.nasr@gmail.com
