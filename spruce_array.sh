@@ -1,7 +1,7 @@
 #!/bin/bash
  
 #SBATCH --job-name=spruce_array
-#SBATCH --time=00:01:00
+#SBATCH --time=00:00:05
 #SBATCH --mem=1
 #SBATCH --input=/scratch/ss3526/spruce_modeling/input/input_%a.rds
 #SBATCH --output=/scratch/ss3526/spruce_modeling/output/output_%a.txt
