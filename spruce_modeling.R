@@ -8,7 +8,8 @@ if (length(args)!=2) {
   stop("Two arguments must be supplied input and output files", call.=FALSE)
 } 
 
-project_dir <- '/scratch/ss3526/spruce_modeling/'
+if(Sys.info()['nodename']=='wind.nauhpc') 
+  project_dir <- paste0('/scratch/', Sys.info()['login'], '/spruce_modeling/')
 
 #if running on Bijan's laptop
 if(.Platform$pkgType=='mac.binary') {

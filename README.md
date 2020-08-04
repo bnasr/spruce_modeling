@@ -32,7 +32,7 @@ cd spruce_modeling
 In your favarite text editor, open the `spruce_array.sh` and `spruce_modeling.R` files and update the following:
 
 1) in `spruce_array.sh`: replace the email address with your email address
-2) in `spruce_modeling.R`: replace the NAUID in variable 'project_dir'
+[Update: this is automatically taken care of now, no edit is necessary] 2) in `spruce_modeling.R`: replace the NAUID in variable 'project_dir' 
 
 
 ## Sumit the job
