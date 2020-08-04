@@ -1,5 +1,5 @@
 ## First time setup on Monsoon
-Do the following steps on monsoon to install phenor, for the first time. 
+Do the following steps on monsoon to install phenor, only for the first time. 
 
 ```console
 module purge
