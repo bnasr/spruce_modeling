@@ -35,7 +35,7 @@ In your favarite text editor, open the `spruce_array.sh` and `spruce_modeling.R`
 2) [**Update**: This is automatically taken care of now, no edit is necessary] in `spruce_modeling.R`: replace the NAUID in variable 'project_dir' 
 
 
-## Sumit the job
+## Submit the job
 You can now submit the job using the following command:
 ```console
 sbatch spruce_array.sh
