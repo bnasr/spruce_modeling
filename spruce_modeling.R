@@ -7,7 +7,10 @@ if (length(args)!=2) {
 } 
 
 project_dir <- '/scratch/ss3526/spruce_modeling/'
-# project_dir <- '~/Projects/spruce_modeling/'
+if(.Platform$pkgType=='mac.binary') {
+  project_dir <- '~/Projects/spruce_modeling/'
+  args <- c('input_1', 'output_1')
+}
 
 input_dir <- paste0(project_dir, 'input/')
 output_dir <- paste0(project_dir, 'output/')
@@ -36,7 +39,7 @@ input_data <- try(readRDS(input_file))
 
 #running all models
 model_fits <- try(mapply(function(model){
-  pr_fit(model = models,
+  pr_fit(model = model,
          data = input_data,
          method = "GenSA",
          control = list(max.call = 1000000),
