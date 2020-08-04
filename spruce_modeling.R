@@ -24,12 +24,11 @@ dir.create(output_dir, showWarnings = FALSE)
 
 input_file <- paste0(input_dir, args[1], '.rds')
 output_file <- paste0(output_dir, args[2], '.RData')
-
 params_file <- paste0(project_dir, 'parameter_ranges.csv')
 
 cat(as.character(Sys.time()), 'input_file = ', input_file, '\n')
-cat(as.character(Sys.time()), 'output_dir = ', output_dir, '\n')
-cat(as.character(Sys.time()), 'project_dir = ', project_dir, '\n')
+cat(as.character(Sys.time()), 'output_file = ', output_file, '\n')
+cat(as.character(Sys.time()), 'params_file = ', params_file, '\n')
 
 
 #devtools::install_github("khufkens/phenor")
