@@ -16,7 +16,7 @@ conda install -c conda-forge r-sf
  install.packages("devtools")
  devtools::install_github("bluegreen-labs/phenor")
  ```
-If phenor installation fails, check the output and reintsall any dependencies that has failed. Then try the last step again.
+If phenor installation fails, check the output and reintsall any dependency that has failed. Then try the last step again.
 
 
 ## Clone the project
