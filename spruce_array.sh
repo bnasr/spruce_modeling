@@ -1,13 +1,13 @@
 #!/bin/bash
  
 #SBATCH --job-name=spruce
-#SBATCH --time=5:00:00
+#SBATCH --time=40:00:00
 #SBATCH --mem-per-cpu=100
-#SBATCH --output=output/output_%a.txt
-#SBATCH --array=1-30
-#SBATCH --mail-user=bijan.s.nasr@gmail.com
+#SBATCH --output=output.txt
+#SBATCH --array=1-750
+#SBATCH --mail-user=christina.schaedel@nau.edu
 #SBATCH --mail-type=ALL
 #SBATCH --exclusive	
 
 module load R
-Rscript spruce_modeling.R input_${SLURM_ARRAY_TASK_ID} output_${SLURM_ARRAY_TASK_ID}
+Rscript spruce_modeling.R ${SLURM_ARRAY_TASK_ID}
